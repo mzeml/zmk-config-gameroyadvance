@@ -1,8 +1,0 @@
-# Copyright (c) 2020 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config SHIELD_GAMEROY_ADVANCE_LEFT
-	def_bool $(shields_list_contains,gameroy_advance_left)
-
-config SHIELD_GAMEROY_ADVANCE_RIGHT
-	def_bool $(shields_list_contains,gameroy_advance_right)

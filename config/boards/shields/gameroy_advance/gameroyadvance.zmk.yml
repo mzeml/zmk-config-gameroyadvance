@@ -1,0 +1,12 @@
+file_format: "1"
+id: Gameroy_Advance
+name: Gameroy Advance
+type: shield
+url: https://github.com/keebio/quefrency-rev1-pcb
+requires: [pro_micro]
+features:
+  - keys
+  - encoder
+siblings:
+  - gameroy_advance_left
+  - gameroy_advance_right

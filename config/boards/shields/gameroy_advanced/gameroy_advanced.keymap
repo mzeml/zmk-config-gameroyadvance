@@ -56,11 +56,11 @@ ZMK_MACRO(my_macro,
 // | Left enconder vol up down                                                                              Right enconder page up down  
             bindings = <
 	&kp GRAVE &kp F1         &kp F2    &kp F3    &kp F4   &kp F5   &kp F6                                                                     &kp F7      &kp F8    &kp F9    &kp F10    &kp F11  &kp F12     &none
-    &none       &none          &kp UP    &none     &none    &none    &none      &out OUT_BLE   &out OUT_USB       &out OUT_BLE   &out OUT_USB    &none      &none       &kp UP   &none     &none      &none     &none  &none
-    &none       &kp N1         &kp N3    &kp N2    &kp N4   &kp N5              &none      &none                  &bt BT_SEL 1   &bt BT_SEL 2    &none      &kp LEFT    &kp DOWN   &kp RIGHT     &none      &none     &none
-    &none       &none          &none     &none     &none    &none    &none      &none      &none                  &bt BT_SEL 3 &bt BT_SEL 4      &none      &none       &none   &none     &none      &none     &none
-    &none       &kp LGUI      &tog 0     &none                                  &none                                                  &none                                                  &bootloader  &tog 0 &bt BT_CLR   &none
-	                                                                        &kp ENTER  &none                                       &none   &none       
+    &trans      &trans         &kp UP    &trans    &trans   &trans   &trans     &out OUT_BLE   &out OUT_USB       &out OUT_BLE   &out OUT_USB    &trans     &trans      &kp UP   &trans    &trans     &trans    &trans &none
+    &trans      &kp N1         &kp N3    &kp N2    &kp N4   &kp N5              &trans     &trans                 &bt BT_SEL 1   &bt BT_SEL 2    &trans     &kp LEFT    &kp DOWN   &kp RIGHT     &trans     &trans    &none
+    &trans      &trans         &trans    &trans    &trans   &trans   &trans     &trans     &trans                 &bt BT_SEL 3 &bt BT_SEL 4      &trans     &trans      &trans  &trans    &trans     &trans    &none
+    &trans      &kp LGUI       &tog 1     &trans                                 &trans                                                 &trans                                                 &bootloader  &tog 1 &bt BT_CLR   &none
+	                                                                        &kp ENTER  &trans                                      &trans  &trans      
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

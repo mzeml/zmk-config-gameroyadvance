@@ -59,7 +59,7 @@ ZMK_MACRO(my_macro,
     &none       &none          &kp UP    &none     &none    &none    &none      &out OUT_BLE   &out OUT_USB       &out OUT_BLE   &out OUT_USB    &none      &none       &kp UP   &none     &none      &none     &none  &none
     &none       &kp N1         &kp N3    &kp N2    &kp N4   &kp N5              &none      &none                  &bt BT_SEL 1   &bt BT_SEL 2    &none      &kp LEFT    &kp DOWN   &kp RIGHT     &none      &none     &none
     &none       &none          &none     &none     &none    &none    &none      &none      &none                  &bt BT_SEL 3 &bt BT_SEL 4      &none      &none       &none   &none     &none      &none     &none
-    &none       &kp LGUI      &none     &none                                  &none                                                  &none                                                  &none  &bootloader &bt BT_CLR   &none
+    &none       &kp LGUI      &tog 0     &none                                  &none                                                  &none                                                  &bootloader  &tog 0 &bt BT_CLR   &none
 	                                                                        &kp ENTER  &none                                       &none   &none       
             >;
 

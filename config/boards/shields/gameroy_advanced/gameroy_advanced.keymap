@@ -7,6 +7,8 @@
     tapping-term-ms = <400>;
 };
 
+/ {
+macros {
 ZMK_MACRO(my_macro,
         wait-ms = <30>;
         tap-ms = <40>;
@@ -18,8 +20,7 @@ ZMK_MACRO(my_macro,
         tap-ms = <40>;
         bindings = <&kp LSHIFT &kp TAB>;
     )
-
-/ {
+};
     keymap {
         compatible = "zmk,keymap";
 
@@ -34,9 +35,9 @@ ZMK_MACRO(my_macro,
 // | Left enconder vol up down                                                                                        Right enconder page up down  
             bindings = <
 	&kp ESC  &kp N1          &kp N2   &kp N3    &kp N4    &kp N5    &kp N6                                                                        &kp N7      &kp N8    &kp N9    &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC
-    &kp TAB   &kp Q           &kp W    &kp E     &kp R     &kp T     &kp Y     &kp M      steam                      &kp PSCRN &kp GRAVE    &kp Y       &kp U       &kp I     &kp O     &kp P     &kp LBKT   &kp RBKT   &kp BSLH
+    &kp TAB   &kp Q           &kp W    &kp E     &kp R     &kp T     &kp Y     &kp M      &steam                      &kp PSCRN &kp GRAVE    &kp Y       &kp U       &kp I     &kp O     &kp P     &kp LBKT   &kp RBKT   &kp BSLH
     &mt LCTRL CAPS &kp A      &kp S    &kp D     &kp F     &kp G               &kp PG_UP  &kp PG_DN                   &kp HOME  &kp END      &kp H       &kp J     &kp K     &kp L     &kp SEMI   &kp APOS   &kp ENTER
-    &kp LSHIFT &kp NON_US_BSLH &kp Z    &kp X    &kp C    &kp V     &kp B      &kp MINUS  &kp EQUAL                   &kp F12   my_macro     &kp B       &kp N     &kp M     &kp COMMA &kp DOT    &kp SLASH  &kp RSHIFT
+    &kp LSHIFT &kp NON_US_BSLH &kp Z    &kp X    &kp C    &kp V     &kp B      &kp MINUS  &kp EQUAL                   &kp F12   &my_macro    &kp B       &kp N     &kp M     &kp COMMA &kp DOT    &kp SLASH  &kp RSHIFT
     &kp LCTRL  &none          &tog 1    &kp LALT                                &mo 1                                            &kp DEL                                   &kp RALT  &tog 1     &kp RGUI   &kp RCTRL
 	                                                                        &kp SPACE &kp LCTRL                              &kp BSPC  &lt 1 SPACE       
             >;

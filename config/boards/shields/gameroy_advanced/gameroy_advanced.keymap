@@ -7,26 +7,38 @@
     tapping-term-ms = <400>;
 };
 
+ZMK_MACRO(my_macro,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp LCTRL &kp LSHIFT &kp GRAVE>;
+    )
+    
+    ZMK_MACRO(steam,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp LSHIFT &kp TAB>;
+    )
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |   `/~   |    1    |    2    |    3    |    4    |    5    |    6    |                                                                   |    7    |    8    |    9    |    0    |    -    |    =    |   BSPC  |
-// |   TAB   |    Q    |    W    |    E    |    R    |    T    |    Y    |    |   F1    |   F2    |                  |   F7    |   F8   |    |    Y    |    U    |    I    |    O    |    P    |    [    |    ]    |    \    |
-// |CAPS/CTRL|    A    |    S    |    D    |    F    |    G    |              |   F3    |   F4    |                  |   F9    |   F10  |    |    H    |    J    |    K    |    L    |   ;     |    '    |   ENTER |
-// |  SHIFT  |    \    |    Z    |    X    |    C    |    V    |    B    |    |   F5    |   F6    |                  |   F11   |   F12  |    |    B    |    N    |    M    |    ,    |    .    |    /    |   SHIFT |
-// |  CTRL   | GUI  |  ALT  |  Fn  |                                          |   MUTE  |                                      | DELETE |                                           | ALT |  Fn  |  GUI  |   CTRL  | 
-// |                                                                |  SPACE  |   Fn    |                                      |  ENTER |  SPACE  |
+// |   ESC   |    1    |    2    |    3    |    4    |    5    |    6    |                                                                   |    7    |    8    |    9    |    0    |    -    |    =    |   BSPC  |
+// |   TAB   |    Q    |    W    |    E    |    R    |    T    |    Y    |    |   M     |   steam |                  | PRTSCR  |   `/~  |    |    Y    |    U    |    I    |    O    |    P    |    [    |    ]    |    \    |
+// |CAPS/CTRL|    A    |    S    |    D    |    F    |    G    |              |   PGUP  |   PGDN  |                  |   HOME  |   END  |    |    H    |    J    |    K    |    L    |   ;     |    '    |   ENTER |
+// |  SHIFT  |    \    |    Z    |    X    |    C    |    V    |    B    |    |   -/-   |   +/=   |                  |   F12   |MacroCON|    |    B    |    N    |    M    |    ,    |    .    |    /    |   SHIFT |
+// |  CTRL   |      |  Fn  |  Alt  |                                          |   FN1   |                                      | DELETE |                                           | ALT |  Fn  |  GUI  |   CTRL  | 
+// |                                                                |  SPACE  |   CTRL  |                                      |  BSPC  |  SPACE(1) |
 // | Left enconder vol up down                                                                                        Right enconder page up down  
             bindings = <
-	&kp GRAVE  &kp N1          &kp N2   &kp N3    &kp N4    &kp N5    &kp N6                                                                        &kp N7      &kp N8    &kp N9    &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC
-    &kp TAB   &kp Q      &kp W    &kp E     &kp R     &kp T     &kp Y     &kp F1     &kp F2                      &kp F7    &kp F8       &kp Y       &kp U       &kp I     &kp O     &kp P     &kp LBKT   &kp RBKT   &kp BSLH
-    &mt LCTRL CAPS &kp A      &kp S    &kp D     &kp F     &kp G               &kp F3     &kp F4                      &kp F9    &kp F10      &kp H       &kp J     &kp K     &kp L     &kp SEMI   &kp APOS   &kp ENTER
-    &kp LSHIFT &kp NON_US_BSLH &kp Z    &kp X     &kp C     &kp V     &kp B     &kp F5     &kp F6                      &kp F11   &kp F12      &kp B       &kp N     &kp M     &kp COMMA &kp DOT    &kp SLASH  &kp RSHIFT
-    &kp LCTRL  &kp LGUI        &kp LALT &mo 1                                   &kp C_MUTE                                       &kp DEL                                   &kp RALT  &mo 1      &kp RGUI   &kp RCTRL
-	                                                                  &kp SPACE &mo 1                                        &mo 1   &kp SPACE       
+	&kp ESC  &kp N1          &kp N2   &kp N3    &kp N4    &kp N5    &kp N6                                                                        &kp N7      &kp N8    &kp N9    &kp N0    &kp MINUS  &kp EQUAL  &kp BSPC
+    &kp TAB   &kp Q           &kp W    &kp E     &kp R     &kp T     &kp Y     &kp M      steam                      &kp PSCRN &kp GRAVE    &kp Y       &kp U       &kp I     &kp O     &kp P     &kp LBKT   &kp RBKT   &kp BSLH
+    &mt LCTRL CAPS &kp A      &kp S    &kp D     &kp F     &kp G               &kp PG_UP  &kp PG_DN                   &kp HOME  &kp END      &kp H       &kp J     &kp K     &kp L     &kp SEMI   &kp APOS   &kp ENTER
+    &kp LSHIFT &kp NON_US_BSLH &kp Z    &kp X    &kp C    &kp V     &kp B      &kp MINUS  &kp EQUAL                   &kp F12   my_macro     &kp B       &kp N     &kp M     &kp COMMA &kp DOT    &kp SLASH  &kp RSHIFT
+    &kp LCTRL  &none          &tog 1    &kp LALT                                &mo 1                                            &kp DEL                                   &kp RALT  &tog 1     &kp RGUI   &kp RCTRL
+	                                                                        &kp SPACE &kp LCTRL                              &kp BSPC  &lt 1 SPACE       
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -34,20 +46,20 @@
 
         fn_layer {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |  ESC    |   F1    |   F2    |   F3    |   F4    |   F5    |   F6    |                                                                   |   F7    |   F8    |   F9    |   F10   |   F11   |   F12   |         |
-// |         |         |   UP    |         |         |         |         |    |  BT1    |  BT2    |                  |   BT    |  USB   |    |         |         |         |         |         |         |         |
-// |         |  LEFT   |  DOWN   |  RIGHT  |         |         |              |  BT3    |  BT4    |                  |         |        |    |         |         |         |         |         |         |         |
-// |         |         |         |         |         |         |         |    |  BT5    |  BT6    |                  |BT CLEAR |        |    |         |         |         |         |         |         |         |
-// |         |      |       |       |                                         |  RESET  |                                      |        |                                           |      |       |     |         | 
-// |                                                                |         |         |                                      |        |         |
+// |   `/~   |   F1    |   F2    |   F3    |   F4    |   F5    |   F6    |                                                                   |   F7    |   F8    |   F9    |   F10   |   F11   |   F12   |         |
+// |         |         |   UP    |         |         |         |         |    |   BT    |  USB    |                  |   BT    |  USB   |    |         |         |   UP    |         |         |         |         |
+// |         |  LEFT   |  DOWN   |  RIGHT  |         |         |              |         |         |                  |  BT1    |  BT2   |    |         |  LEFT   |  DOWN   |  RIGHT  |         |         |         |
+// |         |         |         |         |         |         |         |    |         |         |                  |  BT3    |  BT4   |    |         |         |         |         |         |         |         |
+// |         |      |       |       |                                         |         |                                      |        |                                           |      | RESET| BTCLEAR |      | 
+// |                                                                |         |  ENTER  |                                      |        |         |
 // | Left enconder vol up down                                                                              Right enconder page up down  
             bindings = <
-	&kp ESC     &kp F1         &kp F2    &kp F3    &kp F4   &kp F5   &kp F6                                                                     &kp F7      &kp F8    &kp F9    &kp F10    &kp F11  &kp F12     &none
-    &none       &none          &kp UP    &none     &none    &none    &none      &bt BT_SEL 1 &bt BT_SEL 2         &out OUT_BLE   &out OUT_USB    &none      &none       &kp UP   &none     &none      &none     &none  &none
-    &none       &kp LEFT       &kp DOWN  &kp RIGHT &none    &none               &bt BT_SEL 3 &bt BT_SEL 4         &none          &none           &none      &kp LEFT    &kp DOWN   &kp RIGHT     &none      &none     &none
-    &kp CAPS    &none          &none     &none     &none    &none    &none      &bt BT_SEL 5 &bt BT_SEL 6         &bt BT_CLR     &none           &none      &none       &none   &none     &none      &none     &none
-    &none       &none          &none     &none                                  &bootloader                                            &none                                                  &none  &none   &none   &none
-	                                                                            &none  &none                                            &none   &none       
+	&kp GRAVE &kp F1         &kp F2    &kp F3    &kp F4   &kp F5   &kp F6                                                                     &kp F7      &kp F8    &kp F9    &kp F10    &kp F11  &kp F12     &none
+    &none       &none          &kp UP    &none     &none    &none    &none      &out OUT_BLE   &out OUT_USB       &out OUT_BLE   &out OUT_USB    &none      &none       &kp UP   &none     &none      &none     &none  &none
+    &none       &kp N1         &kp N3    &kp N2    &kp N4   &kp N5              &none      &none                  &bt BT_SEL 1   &bt BT_SEL 2    &none      &kp LEFT    &kp DOWN   &kp RIGHT     &none      &none     &none
+    &none       &none          &none     &none     &none    &none    &none      &none      &none                  &bt BT_SEL 3 &bt BT_SEL 4      &none      &none       &none   &none     &none      &none     &none
+    &none       &&kp LGUI      &none     &none                                  &none                                                  &none                                                  &none  &bootloader &bt BT_CLR   &none
+	                                                                        &kp ENTER  &none                                       &none   &none       
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

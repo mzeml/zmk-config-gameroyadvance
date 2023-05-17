@@ -17,4 +17,5 @@ include:
     shield: gameroy_advanced_left
   - board: nice_nano_v2
     shield: gameroy_advanced_right
+  - board: nice_nano_v2
     shield: settings_reset

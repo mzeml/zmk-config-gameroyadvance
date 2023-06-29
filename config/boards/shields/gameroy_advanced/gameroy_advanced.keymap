@@ -21,6 +21,30 @@ macros {
                 , <&macro_release &kp LSHFT>
                 ;
         };
+    win_mon_left: win_mon_left {
+            label = "ZM_win_mon_left";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LEFT>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+        win_mon_right: win_mon_right {
+            label = "ZM_win_mon_right";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
 };
     keymap {
         compatible = "zmk,keymap";
@@ -57,9 +81,9 @@ macros {
 // | Left enconder vol up down                                                                              Right enconder page up down  
             bindings = <
 	&kp GRAVE &kp F1         &kp F2    &kp F3    &kp F4   &kp F5   &kp F6                                                                     &kp F7      &kp F8    &kp F9    &kp F10    &kp F11  &kp F12     &trans
-    &trans      &trans         &kp UP    &trans    &trans   &trans   &trans     &out OUT_BLE   &out OUT_USB       &bt BT_SEL 1   &bt BT_SEL 2    &trans     &trans      &kp UP   &trans    &trans      &trans    &trans &trans
-    &trans      &kp N1         &kp N3    &kp N2    &kp N4   &kp N5              &bt BT_SEL 1   &bt BT_SEL 2       &bt BT_SEL 3   &bt BT_SEL 4    &trans     &kp LEFT    &kp DOWN  &kp RIGHT &trans     &trans    &trans
-    &trans      &trans         &trans    &trans    &trans   &trans   &trans     &bt BT_PRV     &bt BT_NXT         &bt BT_SEL 5   &bt BT_NXT      &trans     &trans      &trans    &trans    &trans     &trans    &trans
+    &trans      &trans         &trans    &trans    &trans   &trans   &trans     &out OUT_USB   &out OUT_BLE       &bt BT_PRV     &bt BT_NXT      &trans     &trans      &kp UP   &trans    &trans      &trans    &trans &trans
+    &trans      &trans         &trans    &trans    &trans   &trans              &bt BT_SEL 1   &bt BT_SEL 2       &bt BT_SEL 1   &bt BT_SEL 2    &trans     &kp LEFT    &kp DOWN  &kp RIGHT &trans     &trans    &trans
+    &trans      &trans         &trans    &trans    &trans   &trans   &trans     &bt BT_PRV     &bt BT_NXT         &win_mon_left   &win_mon_right      &trans     &trans      &trans    &trans    &trans     &trans    &trans
     &trans      &kp LGUI       &tog 1     &trans                                 &trans                                                 &trans                                                 &trans  &tog 1 &bt BT_CLR  &trans
 	                                                                        &kp ENTER  &trans                                      &trans  &trans      
             >;
